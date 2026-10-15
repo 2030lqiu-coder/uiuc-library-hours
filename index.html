@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UIUC Library Hours</title>
+  <meta name="description" content="Live opening hours for every University of Illinois Urbana-Champaign library, on one page.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">University of Illinois Urbana-Champaign</p>
+      <h1>Library Hours</h1>
+      <p id="summary" class="summary">&nbsp;</p>
+      <p id="clock" class="clock"></p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls" aria-label="Filters">
+      <input id="search" type="search" placeholder="Search libraries or buildings…" aria-label="Search libraries" autocomplete="off">
+      <label class="check"><input id="open-only" type="checkbox"> Open now</label>
+      <label class="select">Sort
+        <select id="sort">
+          <option value="status">Open first</option>
+          <option value="name">A–Z</option>
+        </select>
+      </label>
+      <div class="segmented" role="group" aria-label="View">
+        <button data-view="cards" aria-pressed="true">Cards</button>
+        <button data-view="week" aria-pressed="false">Week</button>
+      </div>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+    <p id="empty" class="empty" hidden>No libraries match. Try clearing the search or the “Open now” filter.</p>
+
+    <section id="cards" class="cards" aria-live="polite"></section>
+    <section id="week" class="week" hidden></section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <p id="updated"></p>
+    <p>Hours come live from the University Library directory. Always confirm on the
+      <a href="https://www.library.illinois.edu/hours/" target="_blank" rel="noopener">official hours page</a>,
+      especially around holidays and breaks.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
