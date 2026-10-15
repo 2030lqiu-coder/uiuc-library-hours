@@ -6,6 +6,7 @@
   <title>UIUC Library Hours</title>
   <meta name="description" content="Live opening hours for every University of Illinois Urbana-Champaign library, on one page.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,14 +32,25 @@
       <div class="segmented" role="group" aria-label="View">
         <button data-view="cards" aria-pressed="true">Cards</button>
         <button data-view="week" aria-pressed="false">Week</button>
+        <button data-view="map" aria-pressed="false">Map</button>
       </div>
     </section>
 
     <p id="status" class="status" role="status"></p>
     <p id="empty" class="empty" hidden>No libraries match. Try clearing the search or the “Open now” filter.</p>
 
-    <section id="cards" class="cards" aria-live="polite"></section>
+    <section id="cards" aria-live="polite"></section>
     <section id="week" class="week" hidden></section>
+    <section id="map-view" hidden>
+      <div id="map" aria-label="Map of UIUC libraries"></div>
+      <ul class="legend">
+        <li><span class="dot open"></span>Open</li>
+        <li><span class="dot closing"></span>Closing or opening within the hour</li>
+        <li><span class="dot closed"></span>Closed</li>
+        <li><span class="star">★</span>Has a favorite</li>
+        <li>Numbers show how many libraries share a building</li>
+      </ul>
+    </section>
   </main>
 
   <footer class="wrap site-footer">
@@ -48,6 +60,7 @@
       especially around holidays and breaks.</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
