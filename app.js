@@ -22,6 +22,9 @@ const store = {
   },
 };
 
+// Older versions saved the last-used view; drop it so every visit opens on cards.
+try { localStorage.removeItem("view"); } catch { /* ignore */ }
+
 const state = {
   libraries: [],
   query: "",

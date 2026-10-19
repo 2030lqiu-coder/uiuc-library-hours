@@ -27,3 +27,6 @@ Then open http://localhost:8000.
 ## Deploy
 It's just `index.html`, `styles.css`, and `app.js`, so any static host works
 (GitHub Pages, Netlify, Vercel, Cloudflare Pages).
+
+When you change `app.js` or `styles.css`, bump the `?v=` number on them in `index.html`.
+GitHub Pages lets browsers cache files for 10 minutes, and the new number makes them fetch the update.
