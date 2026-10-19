@@ -12,7 +12,7 @@ const COORD_OVERRIDES = {
   81: [40.098047, -88.214412],  // Archives Research Center — 1707 S Orchard St
 };
 
-// Favorites and the chosen view live in this browser only; storage can be unavailable (private mode).
+// Favorites live in this browser only; storage can be unavailable (private mode).
 const store = {
   get(key, fallback) {
     try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
@@ -27,7 +27,7 @@ const state = {
   query: "",
   openOnly: false,
   sort: "status",
-  view: ["cards", "week", "map"].includes(store.get("view")) ? store.get("view") : "cards",
+  view: "cards",
   expanded: new Set(),
   favorites: new Set(store.get("favorites", [])),
   fetchedAt: null,
@@ -480,7 +480,6 @@ function renderMap(list, now) {
 
 function setView(view) {
   state.view = view;
-  store.set("view", view);
   render();
 }
 
