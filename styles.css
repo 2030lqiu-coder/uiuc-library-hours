@@ -22,28 +22,6 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f1420;
-    --surface: #171e2d;
-    --text: #e8ebf2;
-    --muted: #9aa3b5;
-    --border: #283146;
-    --open: #5fd394;
-    --open-bg: #16301f;
-    --warn: #ffb35c;
-    --warn-bg: #3a2a14;
-    --closed: #f09a9a;
-    --closed-bg: #3a1e22;
-    --today-bg: #2a2117;
-    --star: #ffc93c;
-    --star-bg: #3a3116;
-    --pin-open: #2fa865;
-    --pin-warn: #e08a1e;
-    --pin-closed: #b05a5a;
-    color-scheme: dark;
-  }
-}
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -238,7 +216,3 @@ select {
 .popup-links { margin: 8px 0 0 !important; padding-top: 8px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; color: var(--muted); }
 .popup-links a { color: var(--orange); font-weight: 600; }
 
-@media (prefers-color-scheme: dark) {
-  /* Darken the OpenStreetMap tiles so the map doesn't glare in dark mode. */
-  .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.9) contrast(.9); }
-}

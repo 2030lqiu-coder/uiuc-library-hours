@@ -10,7 +10,7 @@ who's open right now, when each closes or opens next, and the full 7-day schedul
 - Card view (with expandable weekly hours, links, phone, study rooms) and a week-at-a-glance table
 - Favorites: star libraries to pin them to the top (saved in your browser)
 - Map view: color-coded pins for every library, grouped by building, with hours in each popup
-- Works on phones; light and dark mode
+- Works on phones; always uses the light design
 
 ## Data source
 Hours come from the University Library's public directory API
